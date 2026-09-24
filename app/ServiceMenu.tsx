@@ -67,30 +67,39 @@ export default function ServiceMenu() {
             <h3 className="mt-9 font-display text-2xl font-extrabold tracking-[-.04em]">{service.title}</h3>
             <p className="mt-3 min-h-[3.25rem] text-sm leading-relaxed text-ink/75">{service.description}</p>
             <p className="mt-4 inline-flex rounded-full border border-ink/30 bg-cream/70 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide">✳︎ Nail art à parte · opção 3D</p>
-            <div className="mt-auto border-t border-ink/25 pt-4">
+            <div className="h-12 shrink-0" aria-hidden="true" />
+            <div className="border-t border-ink/25 pt-4">
               <button
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenService(isOpen ? null : service.id)}
-                className="flex w-full cursor-pointer items-center justify-between gap-3 text-left text-[10px] font-extrabold uppercase tracking-widest underline decoration-2 underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-berry"
+                className="flex w-full items-center justify-between gap-3 text-left text-[10px] font-extrabold uppercase tracking-widest underline decoration-2 underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-berry"
               >
                 <span>{isOpen ? "mostrar menos" : "quero saber mais"}</span>
-                <span aria-hidden="true" className={`transition-transform ${isOpen ? "rotate-180" : ""}`}>⌄</span>
+                <span aria-hidden="true" className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>⌄</span>
               </button>
-              <div id={panelId} hidden={!isOpen} className="mt-4 space-y-5">
-                {service.sections.map((section) => (
-                  <section key={section.title}>
-                    <h4 className="font-display text-sm font-extrabold">{section.title}</h4>
-                    {section.description && <p className="mt-2 text-sm leading-relaxed text-ink/75">{section.description}</p>}
-                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink/75">
-                      {section.details.map((detail) => (
-                        <li key={detail}>{detail}</li>
-                      ))}
-                    </ul>
-                  </section>
-                ))}
-                <p className="border-t border-ink/20 pt-3 text-sm font-semibold leading-relaxed">A nail art é cobrada à parte. Também há opções de nail art 3D.</p>
+              <div
+                id={panelId}
+                aria-hidden={!isOpen}
+                className={`grid overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "mt-0 grid-rows-[0fr] opacity-0"}`}
+              >
+                <div className="min-h-0 overflow-hidden">
+                  <div className="space-y-5">
+                    {service.sections.map((section) => (
+                      <section key={section.title}>
+                        <h4 className="font-display text-sm font-extrabold">{section.title}</h4>
+                        {section.description && <p className="mt-2 text-sm leading-relaxed text-ink/75">{section.description}</p>}
+                        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink/75">
+                          {section.details.map((detail) => (
+                            <li key={detail}>{detail}</li>
+                          ))}
+                        </ul>
+                      </section>
+                    ))}
+                    <p className="border-t border-ink/20 pt-3 text-sm font-semibold leading-relaxed">A nail art é cobrada à parte. Também há opções de nail art 3D.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </article>

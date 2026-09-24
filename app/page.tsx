@@ -1,7 +1,9 @@
 import { ArrowDown, ArrowRight, MessageCircle, Sparkles, Star } from "lucide-react";
+import Image from "next/image";
 
 import ServiceMenu from "./ServiceMenu";
 import SiteHeader from "./SiteHeader";
+import logo from "./logo.svg";
 
 const whatsapp = "https://wa.me/5511913727742?text=Oi%2C%20LuaNail!%20Quero%20conhecer%20seu%20trabalho.";
 
@@ -68,7 +70,7 @@ export default function Home() {
         <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-8 px-6 py-14 sm:px-10 md:flex-row md:items-center md:justify-between lg:px-14 lg:py-20"><div className="grain absolute inset-0 opacity-30" /><div className="relative max-w-2xl"><p className="text-xs font-extrabold uppercase tracking-[.2em]">sua próxima unha favorita começa aqui ✳︎</p><h2 className="mt-4 font-display text-5xl font-extrabold leading-[.9] tracking-[-.08em] sm:text-7xl">vamos falar<br />de unhas?</h2><p className="mt-5 max-w-md text-sm leading-relaxed sm:text-base">Conta pra mim o que você tá imaginando. Vai ser um prazer criar algo com a sua cara.</p></div><WhatsAppLink className="group relative inline-flex shrink-0 items-center gap-3 rounded-full border-2 border-ink bg-berry px-7 py-5 text-sm font-extrabold uppercase tracking-wide text-white shadow-[5px_5px_0_#102A43] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-none"><MessageCircle size={19} /> chamar no WhatsApp <ArrowRight size={17} className="transition group-hover:translate-x-1" /></WhatsAppLink><Star className="absolute right-8 top-8 hidden fill-berry text-ink md:block" size={42} strokeWidth={1.5} /></div>
       </section>
 
-      <footer className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-center sm:flex-row sm:px-10 sm:text-left lg:px-14"><a href="#inicio" aria-label="LuaNail, início" className="font-display text-[25px] font-extrabold tracking-[-.09em]">lua<span className="text-[#5D93C6]">nail</span><span className="text-[#5D93C6]">✳︎</span></a><p className="text-[10px] font-semibold uppercase tracking-wider text-ink/60">feito com carinho, cor e um tantinho de glitter ✳︎</p><div className="flex items-center gap-4"><WhatsAppLink className="inline-flex items-center gap-2 text-xs font-bold"><MessageCircle size={17} /> WhatsApp</WhatsAppLink><a href="#inicio" aria-label="Voltar ao início" className="fixed bottom-5 right-5 z-40 grid h-12 w-12 place-items-center rounded-full border-2 border-ink bg-lime shadow-[3px_3px_0_#102A43] transition hover:translate-y-[-2px] hover:shadow-[5px_5px_0_#102A43] sm:bottom-7 sm:right-7"><ArrowDown className="rotate-180" size={17} /></a></div></footer>
+      <footer className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 text-center sm:flex-row sm:px-10 sm:text-left lg:px-14"><a href="#inicio" aria-label="LuaNail, início" className="shrink-0"><Image src={logo} alt="" priority className="h-9 w-32 object-contain" /></a><p className="text-[10px] font-semibold uppercase tracking-wider text-ink/60">feito com carinho, cor e um tantinho de glitter ✳︎</p><div className="flex items-center gap-4"><WhatsAppLink className="inline-flex items-center gap-2 text-xs font-bold"><MessageCircle size={17} /> WhatsApp</WhatsAppLink><a href="#inicio" aria-label="Voltar ao início" className="fixed bottom-5 right-5 z-40 grid h-12 w-12 place-items-center rounded-full border-2 border-ink bg-lime shadow-[3px_3px_0_#102A43] transition hover:translate-y-[-2px] hover:shadow-[5px_5px_0_#102A43] sm:bottom-7 sm:right-7"><ArrowDown className="rotate-180" size={17} /></a></div></footer>
     </main>
   );
 }
