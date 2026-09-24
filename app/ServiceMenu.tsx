@@ -66,7 +66,7 @@ export default function ServiceMenu() {
             </div>
             <h3 className="mt-9 font-display text-2xl font-extrabold tracking-[-.04em]">{service.title}</h3>
             <p className="mt-3 min-h-[3.25rem] text-sm leading-relaxed text-ink/75">{service.description}</p>
-            <p className="mt-4 inline-flex rounded-full border border-ink/30 bg-cream/70 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide">✳ Nail art à parte · opção 3D</p>
+            <p className="mt-4 inline-flex rounded-full border border-ink/30 bg-cream/70 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide">✳︎ Nail art à parte · opção 3D</p>
             <div className="mt-auto border-t border-ink/25 pt-4">
               <button
                 type="button"

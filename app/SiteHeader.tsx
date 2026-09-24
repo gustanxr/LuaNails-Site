@@ -8,7 +8,7 @@ import logo from "./logo.svg";
 function HeaderLogo() {
   return (
     <a href="#inicio" aria-label="LuaNail, início" className="shrink-0">
-      <Image src={logo} alt="" priority className="h-9 w-24 object-contain sm:h-11 sm:w-40" />
+      <Image src={logo} alt="" priority className="h-9 w-28 object-contain max-[360px]:w-24 sm:h-11 sm:w-40" />
     </a>
   );
 }
